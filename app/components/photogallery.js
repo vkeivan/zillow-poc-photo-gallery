@@ -1,5 +1,6 @@
+import classNames from 'classnames';
 import { Link} from 'react-router-dom';
-import {Button, Grid, Row, Col} from 'react-bootstrap'
+import {Grid, Row, Col} from 'react-bootstrap'
 import PropTypes from 'prop-types';
 import React, {Component, Fragment} from 'react';
 
@@ -20,7 +21,7 @@ export class PhotoGallery extends Component {
     onChangeSliderIndex = (step) => {
         const {images} = this.props;
         let {slider_image_index} = this.state;
-        if (slider_image_index + step >= 0 || slider_image_index + step < images.length ) {
+        if (slider_image_index + step >= 0 && slider_image_index + step < images.length ) {
             slider_image_index += step;
             this.setState({
                 slider_image_index
@@ -31,7 +32,7 @@ export class PhotoGallery extends Component {
     onChangeThumbnailIndex = (step) => {
         const {images} = this.props;
         let {thumbnail_pointer} = this.state;
-        if (thumbnail_pointer + step >= 0 || thumbnail_pointer + step < images.length ) {
+        if (thumbnail_pointer + step >= 0 && thumbnail_pointer + step < images.length ) {
             thumbnail_pointer += step;
             this.setState({
                 thumbnail_pointer
@@ -50,7 +51,10 @@ export class PhotoGallery extends Component {
                     <Row>
                         <Col sm={12}>
                             <div className="slider-layout">
-                                <div className="slider-left-nav" onClick={() => this.onChangeSliderIndex(-1)}>
+                                <div
+                                    className={classNames('slider-left-nav', {disabled: slider_image_index === 0})}
+                                    onClick={() => this.onChangeSliderIndex(-1)}
+                                >
                                     <i className="material-icons md-48">
                                         arrow_back_ios
                                     </i>
@@ -68,7 +72,10 @@ export class PhotoGallery extends Component {
                                         }
                                     })}
                                 </div>
-                                <div className="slider-right-nav" onClick={() => this.onChangeSliderIndex(+1)}>
+                                <div
+                                    className={classNames('slider-right-nav', {disabled: slider_image_index === images.length -1})}
+                                    onClick={() => this.onChangeSliderIndex(+1)}
+                                >
                                     <i className="material-icons md-48">
 
                                         arrow_forward_ios
@@ -80,7 +87,10 @@ export class PhotoGallery extends Component {
                     <Row>
                         <Col sm={12}>
                             <div className="slider-container">
-                                <div className="slider-left-nav" onClick={() => this.onChangeThumbnailIndex(-1)}>
+                                <div
+                                    className={classNames('slider-left-nav', {disabled: thumbnail_pointer === 0})}
+                                    onClick={() => this.onChangeThumbnailIndex(-1)}
+                                >
                                     <i className="material-icons">
                                         arrow_back_ios
                                     </i>
@@ -102,7 +112,10 @@ export class PhotoGallery extends Component {
 
                                     })}
                                 </div>
-                                <div className="slider-right-nav" onClick={() => this.onChangeThumbnailIndex(+1)}>
+                                <div
+                                    className={classNames('slider-right-nav', {disabled: thumbnail_pointer === images.length -1})}
+                                    onClick={() => this.onChangeThumbnailIndex(+1)}
+                                >
                                     <i className="material-icons">
 
                                         arrow_forward_ios
