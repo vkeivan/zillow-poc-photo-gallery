@@ -115,7 +115,10 @@ export class PhotoGallery extends Component {
                                                         hash: `#${index}`
                                                     }}
                                                 >
-                                                    <div className="photo-card fade-in" key={index}>
+                                                    <div
+                                                        className={classNames('photo-card fade-in', {selected: index === slider_image_index})}
+                                                        key={index}
+                                                    >
                                                         <img src={item.url}/>
                                                     </div>
                                                 </Link>
