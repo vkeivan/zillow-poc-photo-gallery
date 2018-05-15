@@ -40,6 +40,12 @@ export class PhotoGallery extends Component {
         }
     }
 
+    onSelectThumbnail = (slider_image_index) => {
+        this.setState({
+            slider_image_index
+        });
+    }
+
 
     render() {
         const {images} = this.props;
@@ -101,7 +107,14 @@ export class PhotoGallery extends Component {
 
                                         if (index >= thumbnail_pointer) {
                                             return (
-                                                <Link to={index}>
+                                                <Link
+                                                    onClick={() => this.onSelectThumbnail(index)}
+                                                    to={{
+                                                        pathname: '/',
+                                                        search: `?index=${index}`,
+                                                        hash: `#${index}`
+                                                    }}
+                                                >
                                                     <div className="photo-card fade-in" key={index}>
                                                         <img src={item.url}/>
                                                     </div>
