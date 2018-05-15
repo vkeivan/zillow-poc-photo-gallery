@@ -37,10 +37,6 @@
       "caption": "File Browser"
     },
     {
-      "url": "/file-browser2.png",
-      "caption": "File Browser"
-    },
-    {
       "url": "/file-browser3.png",
       "caption": "File Browser"
     },
@@ -51,6 +47,18 @@
     {
       "url": "/file-browser3.png",
       "caption": "File Browser"
+    },
+    {
+      "url": "/volume-edit1.png",
+      "caption": "Volumes Edit"
+    },
+    {
+      "url": "/volume-edit2.png",
+      "caption": "Volumes Edit"
+    },
+    {
+      "url": "/volume-edit3.png",
+      "caption": "Volumes Edit"
     }
   ]
 

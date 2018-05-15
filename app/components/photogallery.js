@@ -63,7 +63,7 @@ export class PhotoGallery extends Component {
                                     {images.map((item, index) => {
                                         if (index === slider_image_index) {
                                             return (
-                                                <div className="slide-photo-box" key={index}
+                                                <div className="slide-photo-box fade-in" key={index}
                                                      style={{display: 'block'}}>
                                                     <img src={item.url}/>
                                                     <div className="caption">{item.caption}</div>
@@ -102,7 +102,7 @@ export class PhotoGallery extends Component {
                                         if (index >= thumbnail_pointer) {
                                             return (
                                                 <Link to={index}>
-                                                    <div className="photo-card" key={index}>
+                                                    <div className="photo-card fade-in" key={index}>
                                                         <img src={item.url}/>
                                                     </div>
                                                 </Link>

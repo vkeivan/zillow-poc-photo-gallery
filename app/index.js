@@ -17,7 +17,9 @@ import '!file-loader?name=[name].[ext]!./images/file-browser1.png';
 import '!file-loader?name=[name].[ext]!./images/file-browser3.png';
 import '!file-loader?name=[name].[ext]!./images/file-browser4.png';
 import '!file-loader?name=[name].[ext]!./images/dashboard1.png';
-import '!file-loader?name=[name].[ext]!./images/edit-volume2.png';
+import '!file-loader?name=[name].[ext]!./images/volume-edit1.png';
+import '!file-loader?name=[name].[ext]!./images/volume-edit2.png';
+import '!file-loader?name=[name].[ext]!./images/volume-edit3.png';
 
 ReactDOM.render(
 <Provider store={appStore}>
