@@ -2,6 +2,12 @@
   display: block
   padding: 5px
   max-width: 200px
+  padding: 5px
+  width: 200px
+  height: 120px
+  margin-top: 0
+  // line-height: 120px
+
   img
     width: 100%
     height: auto
@@ -17,7 +23,14 @@
 .gallery-container
   display: flex
   flex-flow: nowrap
-  justify-content: flex-start
+  justify-content:
+  .slider-left-nav
+    i
+      margin: auto
+  .slider-right-nav
+    i
+      margin: auto
+
 
 .slide-photo-box
   display: block
@@ -33,3 +46,13 @@
     bottom: 8px
     width: 100%
     text-align: center
+.slider-thumbnails
+  display: flex
+  flex-direction: row
+  overflow-y: hidden
+  .slider-left-nav
+    i
+      margin: auto
+  .slider-right-nav
+    i
+      margin: auto

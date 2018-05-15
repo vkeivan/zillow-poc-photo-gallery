@@ -41,6 +41,12 @@ const PhotoGallery = ({images, onClick}) => {
                 <Row>
                     <Col sm={12}>
                         <div className="gallery-container">
+                            <div className="slider-left-nav">
+                                <i className="material-icons">
+                                    arrow_back_ios
+                                </i>
+                            </div>
+                            <div className={'slider-thumbnails'}>
                             {images.map((item, index) => {
                                 return (
                                     <Link to={index}>
@@ -50,6 +56,13 @@ const PhotoGallery = ({images, onClick}) => {
                                     </Link>
                                 )
                             })}
+                            </div>
+                            <div className="slider-right-nav">
+                                <i className="material-icons">
+
+                                    arrow_forward_ios
+                                </i>
+                            </div>
                         </div>
                     </Col>
                 </Row>
